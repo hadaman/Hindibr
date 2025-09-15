@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>वाक्य - हिंदी व्याकरण</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .sub-btn {
+            background-color: #10b981;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 6px 0;
+            font-size: 14px;
+            width: 200px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .sub-btn:hover {
+            background-color: #059669;
+        }
+        .sub-content {
+            display: none;
+            margin: 8px 0;
+            background-color: #f9fafb;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: justify;
+        }
+    </style>
 </head>
 <body>
     <h1>वाक्य</h1>
@@ -12,8 +40,35 @@
     <div class="content">
         वाक्य शब्दों का ऐसा समूह है, जो पूर्ण अर्थ प्रकट करता है।<br>
         उदाहरण: "पक्षी चहचहा रहे हैं।"
+
+        <!-- Sub-buttons inside main content -->
+        <h3>👉 वाक्य के भेद:</h3>
+        <button class="sub-btn" onclick="toggleContent('vakya1')">1. विधान वाक्य</button>
+        <div id="vakya1" class="sub-content">
+            विधान वाक्य वह होता है, जिसमें किसी तथ्य का वर्णन किया जाता है।<br>
+            उदाहरण: "राम स्कूल जाता है।"
+        </div>
+
+        <button class="sub-btn" onclick="toggleContent('vakya2')">2. प्रश्नवाचक वाक्य</button>
+        <div id="vakya2" class="sub-content">
+            प्रश्न पूछने वाले वाक्य को प्रश्नवाचक वाक्य कहते हैं।<br>
+            उदाहरण: "क्या तुम स्कूल जाओगे?"
+        </div>
+
+        <button class="sub-btn" onclick="toggleContent('vakya3')">3. विस्मयादिबोधक वाक्य</button>
+        <div id="vakya3" class="sub-content">
+            जिसमें आश्चर्य या भाव प्रकट हो उसे विस्मयादिबोधक वाक्य कहते हैं।<br>
+            उदाहरण: "वाह! कितना सुंदर दृश्य है।"
+        </div>
     </div>
 
     <a class="link-btn" href="index.html">← मुख्य पृष्ठ पर वापस जाएँ</a>
+
+    <script>
+        function toggleContent(id) {
+            const el = document.getElementById(id);
+            el.style.display = (el.style.display === "block") ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
